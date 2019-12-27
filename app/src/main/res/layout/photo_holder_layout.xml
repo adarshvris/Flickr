@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="photoMetaData"
+            type="com.adarsh.flickrapp.api.PhotoMetaDataDetails" />
+
+        <variable
+            name="onItemClicked"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:onClick="@{onItemClicked}"
+            android:scaleType="fitCenter"
+            app:loadImage="@{photoMetaData.thumbnailUrl}"
+            app:srcCompat="@drawable/default_thumbnail" />
+
+    </LinearLayout>
+
+</layout>

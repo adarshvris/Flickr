@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_component"
+    app:startDestination="@id/photoGridFragment">
+
+    <fragment
+        android:id="@+id/photoGridFragment"
+        android:name="com.adarsh.flickrapp.ui.PhotoGridFragment"
+        android:label="PhotoGridFragment">
+        <argument
+            android:name="photoMetaDataDetails"
+            app:argType="com.adarsh.flickrapp.api.PhotoMetaDataDetails" />
+        <action
+            android:id="@+id/action_photoGridFragment_to_photoFullViewFragment"
+            app:destination="@id/photoFullViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoFullViewFragment"
+        android:name="com.adarsh.flickrapp.ui.PhotoFullViewFragment"
+        android:label="PhotoFullViewFragment">
+
+        <argument
+            android:name="photoMetaDataDetails"
+            app:argType="com.adarsh.flickrapp.api.PhotoMetaDataDetails" />
+    </fragment>
+</navigation>
